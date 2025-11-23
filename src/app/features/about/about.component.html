@@ -1,0 +1,44 @@
+<div class="max-w-6xl mx-auto px-5 md:px-8">
+  <!-- Title mono tipo archivo -->
+  <div class="text-xs font-mono tracking-[.35em] text-zinc-500 mb-4">
+    IDENTIDAD
+  </div>
+
+  <div class="flex items-end justify-between gap-6 mb-10">
+    <h2 class="text-3xl md:text-4xl font-semibold text-zinc-100">
+      Quién soy, sin ruido.
+    </h2>
+
+    <p class="hidden md:block text-sm text-zinc-400 max-w-md">
+      Un resumen corto, estilo expediente. Directo a lo que importa.
+    </p>
+  </div>
+
+  <!-- 3 cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+    <article
+      *ngFor="let b of blocks"
+      class="group rounded-2xl border border-white/10 bg-[#111418]/80 p-6
+             hover:border-white/25 hover:bg-[#151A20]/90 transition
+             hover:-translate-y-1"
+    >
+      <!-- mini label -->
+      <div class="text-[11px] font-mono tracking-[.3em] text-zinc-500 mb-3">
+        {{ b.subtitle.toUpperCase() }}
+      </div>
+
+      <h3 class="text-xl font-semibold text-zinc-100 mb-3">
+        {{ b.title }}
+      </h3>
+
+      <p class="text-zinc-300 leading-relaxed">
+        {{ b.body }}
+      </p>
+
+      <!-- línea roja sutil al hover -->
+      <div
+        class="mt-6 h-px w-12 bg-red-600/0 group-hover:bg-red-600/70 transition"
+      ></div>
+    </article>
+  </div>
+</div>

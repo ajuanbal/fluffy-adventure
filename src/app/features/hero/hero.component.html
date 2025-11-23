@@ -1,0 +1,60 @@
+<!-- src/app/features/hero/hero.component.html -->
+<div class="max-w-6xl mx-auto px-5 md:px-8 py-24 md:py-32">
+  <!-- Metadata superior -->
+  <div class="text-xs font-mono tracking-[.35em] text-zinc-500 mb-6">
+    OPENING · PORTFOLIO
+  </div>
+
+  <!-- Título estilo “póster” -->
+  <h1
+    class="hero-title text-5xl md:text-7xl font-semibold tracking-tight text-zinc-100 leading-[1.05]"
+    [attr.data-text]="name"
+  >
+    {{ name }}
+  </h1>
+
+  <!-- Rol -->
+  <p class="mt-4 text-lg md:text-xl text-zinc-400">
+    {{ role }}
+  </p>
+
+  <!-- Línea meta tipo consola -->
+  <p class="mt-4 font-mono text-sm md:text-base text-zinc-400">
+    <span class="opacity-80">{{ meta }}</span
+    ><span class="cursor-blink">█</span>
+  </p>
+
+  <!-- Tagline -->
+  <p class="mt-6 max-w-2xl text-base md:text-lg text-zinc-300">
+    {{ tagline }}
+  </p>
+
+  <div class="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
+  <app-cine-button
+    href="#projects"
+    variant="primary"
+    label="Ver proyectos">
+  </app-cine-button>
+
+  <app-cine-button
+    href="#contact"
+    variant="primary"
+    label="Contactar">
+  </app-cine-button>
+
+  <app-cine-button
+    href="assets/cv.pdf"
+    variant="primary"
+    target="_blank"
+    label="Descargar CV">
+  </app-cine-button>
+</div>
+
+
+  <!-- Línea inferior “status” -->
+  <div class="mt-14 pt-6 border-t border-white/5">
+    <p class="text-xs font-mono tracking-[.25em] text-zinc-500">
+      {{ statusLine }}
+    </p>
+  </div>
+</div>

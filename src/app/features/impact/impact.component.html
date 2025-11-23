@@ -1,0 +1,61 @@
+<div class="max-w-6xl mx-auto px-5 md:px-8">
+  <!-- Title mono -->
+  <div class="text-xs font-mono tracking-[.35em] text-zinc-500 mb-4">
+    IMPACTO
+  </div>
+
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+    <h2 class="text-3xl md:text-4xl font-semibold text-zinc-100">
+      Resultados visibles
+    </h2>
+
+    <p class="text-sm text-zinc-400 max-w-md">
+      Métricas y logros resumidos. En proyectos reales y entregas con trazabilidad.
+    </p>
+  </div>
+
+  <!-- Stats -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+    <article
+      *ngFor="let s of stats"
+      class="rounded-2xl border border-white/10 bg-[#111418]/80 p-6
+             hover:border-white/25 hover:bg-[#151A20]/90 transition"
+    >
+      <div class="text-4xl md:text-5xl font-semibold text-zinc-100">
+        {{ s.value }}
+      </div>
+      <div class="mt-2 text-sm md:text-base text-zinc-300">
+        {{ s.label }}
+      </div>
+      <div *ngIf="s.sub" class="mt-1 text-xs font-mono tracking-wide text-zinc-500">
+        {{ s.sub }}
+      </div>
+
+      <div class="mt-6 h-px w-12 bg-red-600/70"></div>
+    </article>
+  </div>
+
+  <!-- Highlights -->
+  <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+    <article
+      *ngFor="let h of highlights"
+      class="rounded-2xl border border-white/10 bg-black/30 p-6
+             hover:border-white/25 hover:bg-black/40 transition"
+    >
+      <div class="text-[11px] font-mono tracking-[.3em] text-zinc-500 mb-2">
+        CASE NOTE
+      </div>
+      <h3 class="text-lg font-semibold text-zinc-100">
+        {{ h.title }}
+      </h3>
+      <p class="mt-2 text-zinc-300 leading-relaxed">
+        {{ h.body }}
+      </p>
+    </article>
+  </div>
+
+  <!-- Footer line -->
+  <div class="mt-10 text-xs font-mono tracking-[.25em] text-zinc-500">
+    OUTPUT: MEASURABLE · STABLE · DELIVERED
+  </div>
+</div>

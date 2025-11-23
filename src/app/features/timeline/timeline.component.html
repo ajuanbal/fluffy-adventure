@@ -1,0 +1,84 @@
+<div class="max-w-6xl mx-auto px-5 md:px-8">
+  <!-- Title mono -->
+  <div class="text-xs font-mono tracking-[.35em] text-zinc-500 mb-4">
+    LOGS
+  </div>
+
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+    <h2 class="text-3xl md:text-4xl font-semibold text-zinc-100">
+      Experiencia y registro
+    </h2>
+
+    <p class="text-sm text-zinc-400 max-w-md">
+      Línea de tiempo en modo “bitácora”: qué hice, dónde impacté y con qué stack.
+    </p>
+  </div>
+
+  <!-- Timeline -->
+  <div class="relative">
+    <!-- línea vertical -->
+    <div class="absolute left-3 md:left-1/2 top-0 bottom-0 w-px bg-white/10"></div>
+
+    <div class="space-y-8 md:space-y-10">
+      <article
+        *ngFor="let it of items; let i = index"
+        class="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8"
+      >
+        <!-- Punto -->
+        <div
+          class="absolute left-3 md:left-1/2 -translate-x-1/2 top-2 w-3 h-3 rounded-full
+                 border border-red-600 bg-black"
+        ></div>
+
+        <!-- Lado izquierdo (año) -->
+        <div
+          class="pl-10 md:pl-0 md:pr-10 md:text-right md:col-start-1"
+          [ngClass]="{ 'md:col-start-1': i % 2 === 0, 'md:col-start-2': i % 2 !== 0 }"
+        >
+          <div class="text-[11px] font-mono tracking-[.3em] text-zinc-500">
+            {{ it.year }}
+          </div>
+        </div>
+
+        <!-- Lado derecho (contenido) -->
+        <div
+          class="pl-10 md:pl-10 md:col-start-2"
+          [ngClass]="{ 'md:col-start-2': i % 2 === 0, 'md:col-start-1 md:text-right md:pr-10': i % 2 !== 0 }"
+        >
+          <div
+            class="rounded-2xl border border-white/10 bg-[#111418]/80 p-6
+                   hover:border-white/25 hover:bg-[#151A20]/90 transition"
+          >
+            <h3 class="text-lg md:text-xl font-semibold text-zinc-100">
+              {{ it.title }}
+            </h3>
+
+            <p class="text-sm text-zinc-400 mt-1">
+              {{ it.place }}
+            </p>
+
+            <ul class="mt-4 space-y-2 text-zinc-300 leading-relaxed">
+              <li *ngFor="let b of it.bullets" class="flex gap-2">
+                <span class="text-red-600 mt-1">•</span>
+                <span>{{ b }}</span>
+              </li>
+            </ul>
+
+            <!-- tags -->
+            <div *ngIf="it.tags?.length" class="flex flex-wrap gap-2 mt-5">
+              <span
+                *ngFor="let t of it.tags"
+                class="text-[11px] font-mono tracking-wide text-zinc-400
+                       border border-white/10 bg-black/30 px-2 py-1 rounded-full"
+              >
+                {{ t }}
+              </span>
+            </div>
+
+            <div class="mt-6 h-px w-12 bg-red-600/70"></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

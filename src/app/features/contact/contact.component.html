@@ -1,0 +1,93 @@
+<div class="max-w-6xl mx-auto px-5 md:px-8">
+  <!-- Title mono -->
+  <div class="text-xs font-mono tracking-[.35em] text-zinc-500 mb-4">
+    CONTACTO
+  </div>
+
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+    <h2 class="text-3xl md:text-4xl font-semibold text-zinc-100">
+      Hablemos.
+    </h2>
+
+    <p class="text-sm text-zinc-400 max-w-md">
+      Si tienes un reto complejo o un proyecto en mente, me encantaría escucharlo.
+    </p>
+  </div>
+
+  <!-- Links grandes -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+    <a
+      *ngFor="let l of links"
+      [href]="l.href"
+      target="_blank"
+      class="rounded-2xl border border-white/10 bg-[#111418]/80 px-4 py-4 text-center
+             text-sm md:text-base text-zinc-200 hover:text-white hover:border-white/30
+             hover:bg-[#151A20]/90 transition"
+    >
+      <div class="text-[11px] font-mono tracking-[.3em] text-zinc-500 mb-1">
+        {{ l.kind.toUpperCase() }}
+      </div>
+      <div class="font-semibold">{{ l.label }}</div>
+    </a>
+  </div>
+
+  <!-- Mini form opcional -->
+  <div class="mt-10 rounded-2xl border border-white/10 bg-black/30 p-6 md:p-8">
+    <div class="text-[11px] font-mono tracking-[.3em] text-zinc-500 mb-4">
+      MESSAGE CHANNEL
+    </div>
+
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="flex flex-col gap-2">
+        <label class="text-xs font-mono tracking-widest text-zinc-500">NOMBRE</label>
+        <input
+          type="text"
+          placeholder="Tu nombre"
+          class="rounded-xl bg-[#0B0D10] border border-white/10 px-4 py-3 text-zinc-100
+                 placeholder:text-zinc-600 focus:outline-none focus:border-red-600 transition"
+        />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label class="text-xs font-mono tracking-widest text-zinc-500">EMAIL</label>
+        <input
+          type="email"
+          placeholder="tuemail@correo.com"
+          class="rounded-xl bg-[#0B0D10] border border-white/10 px-4 py-3 text-zinc-100
+                 placeholder:text-zinc-600 focus:outline-none focus:border-red-600 transition"
+        />
+      </div>
+
+      <div class="md:col-span-2 flex flex-col gap-2">
+        <label class="text-xs font-mono tracking-widest text-zinc-500">MENSAJE</label>
+        <textarea
+          rows="4"
+          placeholder="Cuéntame brevemente tu idea o necesidad…"
+          class="rounded-xl bg-[#0B0D10] border border-white/10 px-4 py-3 text-zinc-100
+                 placeholder:text-zinc-600 focus:outline-none focus:border-red-600 transition"
+        ></textarea>
+      </div>
+
+      <div class="md:col-span-2 flex items-center justify-between gap-3 mt-2">
+        <p class="text-xs text-zinc-500">
+          *Este formulario es visual; luego lo conectamos a EmailJS / backend.
+        </p>
+
+        <button
+          type="button"
+          class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm md:text-base
+                 border border-red-600 text-zinc-100 hover:bg-red-600 hover:text-black transition"
+        >
+          Enviar
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- End credits line -->
+  <div class="mt-12 pt-6 border-t border-white/5 text-center">
+    <p class="text-xs font-mono tracking-[.3em] text-zinc-500">
+      END CREDITS · THANKS FOR WATCHING
+    </p>
+  </div>
+</div>

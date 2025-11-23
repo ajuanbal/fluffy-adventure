@@ -1,0 +1,12 @@
+/* hover lift suave tipo “UI de sistema” */
+.project-card {
+  transform: translateZ(0);
+}
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+/* overlay aparece con feeling “capa” */
+.project-overlay {
+  transition: opacity 160ms ease-out;
+}

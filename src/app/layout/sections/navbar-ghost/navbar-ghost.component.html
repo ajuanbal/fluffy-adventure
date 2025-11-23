@@ -1,0 +1,26 @@
+<!-- src/app/layout/sections/navbar-ghost/navbar-ghost.component.html -->
+<header
+  class="fixed top-0 left-0 right-0 z-20 backdrop-blur-sm bg-black/20 border-b border-white/5"
+>
+  <nav class="max-w-6xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
+    <!-- Logo / monograma -->
+    <a href="#hero" class="text-white font-semibold tracking-wide">
+      JB<span class="text-red-600">.</span>
+    </a>
+
+    <!-- Links ghost -->
+    <div class="hidden md:flex items-center gap-6 text-xs tracking-[.25em] text-zinc-400 font-mono">
+      <a href="#about" class="hover:text-white transition">IDENTIDAD</a>
+      <a href="#projects" class="hover:text-white transition">OPERACIONES</a>
+      <a href="#stack" class="hover:text-white transition">SISTEMA</a>
+      <a href="#timeline" class="hover:text-white transition">LOGS</a>
+      <a href="#contact" class="hover:text-white transition">CONTACTO</a>
+    </div>
+
+    <!-- Mobile simple -->
+    <a href="#projects"
+       class="md:hidden text-xs font-mono tracking-widest text-zinc-300 border border-white/10 px-3 py-1 rounded-full">
+      PROYECTOS
+    </a>
+  </nav>
+</header>

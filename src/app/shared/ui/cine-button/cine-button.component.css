@@ -1,0 +1,21 @@
+/* Base del botón */
+.cine-btn {
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-3
+    text-sm md:text-base transition border font-medium tracking-wide;
+}
+
+/* Variantes */
+.cine-btn--primary {
+  @apply bg-transparent border-red-600 text-zinc-100
+    hover:bg-red-600 hover:text-black;
+}
+
+.cine-btn--ghost {
+  @apply bg-transparent border-white/10 text-zinc-200
+    hover:border-white/30 hover:text-white;
+}
+
+.cine-btn--outline {
+  @apply bg-transparent border-zinc-700 text-zinc-200
+    hover:border-zinc-200 hover:text-white;
+}
